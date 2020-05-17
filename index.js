@@ -1,6 +1,10 @@
 const express = require('express'); // import express
 const app = express(); // initialize express
+const cors = require('cors'); // import cors package
+
 const fakeWeatherData = require('./data'); // import fake data
+
+app.use(cors()); // Enable cors requests
 
 app.get('/weather', function(req, res) {
   let cityName = req.query.city.toLowerCase();
